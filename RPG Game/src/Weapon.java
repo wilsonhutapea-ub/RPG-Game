@@ -32,10 +32,11 @@ class Weapon {
         this.condition = condition;
     }
     void displayStats(){
-        System.out.println("Weapon Name: " + name);
-        System.out.println("Weapon ATK: " + atk);
-        System.out.println("Weapon isBroken? " + isBroken);
-        System.out.println("Weapon Condition: " + condition + "\n");
+        System.out.printf("Weapon name: %s\n" +
+                          "Weapon ATK: %d\n" +
+                          "Weapon isBroken? %b\n" +
+                          "Weapon condition: %d\n\n",
+                           name,atk,isBroken,condition);
     }
     void repair(){
         condition = 100;
@@ -50,7 +51,6 @@ class Weapon {
     }
     static int randomAtk(Weapon w){
         int r = 10 * (int) (3 * Math.random() + 1);
-        // System.out.println((int)(w.atk * r * 0.01));
         return (int) (w.atk * r * 0.01);
     }
 }
