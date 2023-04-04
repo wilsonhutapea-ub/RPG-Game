@@ -22,7 +22,7 @@ public class Hero extends Character {
     }
 
     void ultimate(Character opponent){
-        this.doubleAttack(opponent, baseAtk, conjureWeapon());
+        this.doubleAttack(opponent);
         if(opponent.getHp() <= (0.2*opponent.getMaxHp())){
             this.attack(opponent);        
         }
@@ -30,7 +30,6 @@ public class Hero extends Character {
     }
 
     private Weapon conjureWeapon(){
-        Weapon wpn = new Weapon(50, "Keris", false, 100);
-        return wpn;
+        return new Weapon(50, "Keris", false, 100);
     }
 }
