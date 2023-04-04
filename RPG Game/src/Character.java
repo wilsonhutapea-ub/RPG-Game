@@ -42,16 +42,18 @@ public class Character {
         this.level = lvl;
     }
     void displayStats(int baseAtk){
-        System.out.println("Name: " + name);
-        System.out.println("\nHP: " + hp);
-        System.out.println("Def: " + def);
-        System.out.println("Atk: " + baseAtk);
-        System.out.println("Role: " + role);
-        // weapon.displayStats();
+        System.out.printf(
+                "Name: %s\n" +
+                "HP: %d\n" +
+                "Def: %d\n" +
+                "Atk: %d\n" +
+                "Role: %s\n",
+                name,hp,def,baseAtk,role);
     }
 
     void attack(Character opponent, int baseAtk, Weapon wpn){
-        int newHp = opponent.getHp() - level * baseAtk + wpn.use() - opponent.defense(baseAtk) + Weapon.randomAtk(wpn);
+        int newHp = opponent.getHp() - level * baseAtk + wpn.use() -
+        opponent.defense(baseAtk) + Weapon.randomAtk(wpn);
         opponent.setHp(newHp);
         opponent.setDef(0);
     }

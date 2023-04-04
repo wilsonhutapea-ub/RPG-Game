@@ -13,7 +13,11 @@ public class Enemy extends Character {
     }
 
     void attack(Character ch){
-        super.attack(null, baseAtk, wpn);
+        super.attack(ch, baseAtk, wpn);
+    }
+
+    void doubleAttack(Character ch){
+        super.doubleAttack(ch, baseAtk, wpn);
     }
 
     void remedy(){

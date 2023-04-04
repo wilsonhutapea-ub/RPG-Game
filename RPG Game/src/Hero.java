@@ -10,8 +10,11 @@ public class Hero extends Character {
     }
 
     void attack(Character ch){
-        Weapon wpn = new Weapon(50, "Keris", false, 100);
-        super.attack(ch, baseAtk, wpn);
+        super.attack(ch, baseAtk, conjureWeapon());
+    }
+
+    void doubleAttack(Character ch){
+        super.doubleAttack(ch, baseAtk, conjureWeapon());
     }
 
     void heal(){
@@ -19,11 +22,15 @@ public class Hero extends Character {
     }
 
     void ultimate(Character opponent){
-        Weapon wpn = new Weapon(50, "Keris", false, 100);
-        this.doubleAttack(opponent, baseAtk, wpn);
+        this.doubleAttack(opponent, baseAtk, conjureWeapon());
         if(opponent.getHp() <= (0.2*opponent.getMaxHp())){
             this.attack(opponent);        
         }
         this.heal();
+    }
+
+    private Weapon conjureWeapon(){
+        Weapon wpn = new Weapon(50, "Keris", false, 100);
+        return wpn;
     }
 }
