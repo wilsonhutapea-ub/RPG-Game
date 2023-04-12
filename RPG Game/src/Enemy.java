@@ -9,7 +9,7 @@ public class Enemy extends Character {
 
     void displayStats(){
         super.displayStats(baseAtk);
-        wpn.displayStats();
+        wpn.displayStats(super.getName());
     }
 
     void attack(Character ch){

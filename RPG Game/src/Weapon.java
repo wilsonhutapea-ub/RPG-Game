@@ -31,12 +31,13 @@ class Weapon {
     void setCondition(int condition){
         this.condition = condition;
     }
-    void displayStats(){
-        System.out.printf("Weapon name: %s\n" +
-                          "Weapon ATK: %d\n" +
-                          "Weapon isBroken? %b\n" +
-                          "Weapon condition: %d\n\n",
-                           name,atk,isBroken,condition);
+    void displayStats(String enemyName){
+        System.out.printf("-- %s Weapon Data --\n" +
+                          "Name: %s\n" +
+                          "ATK: %d\n" +
+                          "isBroken? %b\n" +
+                          "Condition: %d\n\n",
+                           enemyName,name,atk,isBroken,condition);
     }
     void repair(){
         condition = 100;
